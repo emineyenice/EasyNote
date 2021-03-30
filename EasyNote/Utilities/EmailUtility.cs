@@ -14,9 +14,7 @@ namespace EasyNote.Utilities
         {
             using (var smtp = new SmtpClient("emineyenice.com"))
             {
-                smtp.Credentials = new NetworkCredential("easynote@emineyenice.com", "***");
-                smtp.EnableSsl = true;
-                smtp.Port = 587;
+                
                 MailMessage message = new MailMessage("easynote@emineyenice.com", to, subject, body);
                 message.IsBodyHtml = true;
                 await smtp.SendMailAsync(message);
